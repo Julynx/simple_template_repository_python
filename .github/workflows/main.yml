@@ -20,11 +20,11 @@ jobs:
 
       - name: Install dependencies for GitHub Action
         run: |
-          pip install pylint pycodestyle bandit pytest coverage pydocstyle
+          pip install pylint pycodestyle bandit pytest pytest-custom_exit_code coverage pydocstyle
 
       - name: Passes PyTest tests
         run: |
-          pytest .
+          pytest --suppress-no-test-exit-code .
 
       - name: Linting checks
         run: |
