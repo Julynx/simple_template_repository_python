@@ -1,0 +1,37 @@
+name: Pre-commit Checks
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10
+
+      - name: Install dependencies
+        run: |
+          pip install pylint pycodestyle bandit pytest coverage pydocstyle
+
+      - name: Run pre-commit checks
+        run: |
+          find . -name "*.py" -exec pylint {} \;
+          find . -name "*.py" -exec pycodestyle {} \;
+          bandit -r .
+          pydocstyle .
+
+      - name: Run tests with coverage
+        run: coverage run -m pytest tests/
+
+      - name: Report test coverage
+        run: |
+          coverage report -m
