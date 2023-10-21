@@ -34,4 +34,4 @@ body:
   - type: textarea
     attributes:
       label: Related Issues
-      description: Links to any open or closed issues related to this feature request.
+      placeholder: Links to any open or closed issues related to this feature request.
