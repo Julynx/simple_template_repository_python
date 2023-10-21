@@ -4,12 +4,15 @@ labels: ["bug"]
 assignees:
   - Julynx
 body:
-  - type: markdown
+  - type: checkboxes
+    id: cat-preferences
     attributes:
-      value: |
-        ## Self Check
-        [ ] I have taken a look for similar errors in existing GitHub Issues.
-        [ ] I have taken a look at the documentation for help.
+      label: What kinds of cats do you like?
+      description: You may select more than one.
+      options:
+        - label: Orange cat (required. Everyone likes orange cats.)
+          required: true
+        - label: **Black cat**
   - type: textarea
     validations:
       required: true
