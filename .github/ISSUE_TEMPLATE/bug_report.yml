@@ -18,7 +18,7 @@ body:
       required: true
     attributes:
       label: Describe the bug
-      description: A short and clear description of what the bug is.
+      placeholder: A short and clear description of what the bug is.
   - type: textarea
     validations:
       required: true
