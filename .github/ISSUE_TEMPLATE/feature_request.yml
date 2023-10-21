@@ -8,8 +8,8 @@ body:
     attributes:
       value: |
         ## Self Check
-        [] I have taken a look for similar feature requests in existing GitHub Issues.
-        [] I have taken a look at the documentation, and the requested feature does not already exist.
+        [ ] I have taken a look for similar feature requests in existing GitHub Issues.
+        [ ] I have taken a look at the documentation, and the requested feature does not already exist.
   - type: textarea
     attributes:
       label: Describe the proposed feature.
