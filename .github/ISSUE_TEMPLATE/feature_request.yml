@@ -1,0 +1,35 @@
+name: 🚀 Feature request
+description: Suggest a new feature/idea for this project 💡
+labels: ["feature"]
+assignees:
+  - Julynx
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Self Check
+        [] I have taken a look for similar feature requests in existing GitHub Issues.
+        [] I have taken a look at the documentation, and the requested feature does not already exist.
+  - type: textarea
+    attributes:
+      label: Describe the proposed feature.
+      description: A clear and brief description of the feature, preferably in a single sentence.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: How would you use the program if it had this feature?
+      description: Give an example of a functionality or workflow that would be made possible / improved by adding this feature.
+      placeholder: Ex. If the program had this feature I would be able to call... Then, I could pass in the value(s)... The program would then...
+  - type: textarea
+    attributes:
+      label: Can I achieve the same result with currently existing functionality? How? (If possible)
+      placeholder: With current functionality, even though I can do... I can't actually achieve...
+  - type: textarea
+    attributes:
+      label: Additional context
+      description: Add any other context, screenshots, or conversations about the feature request here. If you know of other projects that have this feature, please link them here.
+  - type: textarea
+    attributes:
+      label: Related Issues
+      description: Are there any open or closed issues related to this feature request? If so, please link them below!
