@@ -13,25 +13,28 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Set up Python
+      - name: Set up Python for GitHub Action
         uses: actions/setup-python@v2
         with:
           python-version: '3.10'
 
-      - name: Install dependencies
+      - name: Install dependencies for GitHub Action
         run: |
           pip install pylint pycodestyle bandit pytest coverage pydocstyle
 
-      - name: Run pre-commit checks
+      - name: Passes PyTest tests
+        run: |
+          pytest .
+
+      - name: Linting checks
         run: |
           find . -name "*.py" -exec pylint {} \;
+
+      - name: Code style checks
+        run: |
           find . -name "*.py" -exec pycodestyle {} \;
-          bandit -r .
           pydocstyle .
 
-      - name: Run tests with coverage
-        run: coverage run -m pytest
-
-      - name: Report test coverage
+      - name: Security checks
         run: |
-          coverage report -m
+          bandit -r .
