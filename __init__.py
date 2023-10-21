@@ -1,3 +1,1 @@
-"""
-Template __init__.py file.
-"""
+"""Template __init__.py file."""
