@@ -28,12 +28,15 @@ jobs:
 
       - name: Linting checks
         run: |
-          find . -name "*.py" -exec pylint {} \;
-
+          pylint `ls -R|grep .py$|xargs`
+      
       - name: Code style checks
         run: |
-          find . -name "*.py" -exec pycodestyle {} \;
-          pydocstyle .
+          pycodestyle `ls -R|grep .py$|xargs`
+
+      - name: Documentation checks
+        run: |
+          pydocstyle `ls -R|grep .py$|xargs`
 
       - name: Security checks
         run: |
