@@ -7,12 +7,12 @@ body:
   - type: checkboxes
     id: cat-preferences
     attributes:
-      label: What kinds of cats do you like?
-      description: You may select more than one.
+      label: Self Check
       options:
-        - label: Orange cat (required. Everyone likes orange cats.)
+        - label: I have taken a look for similar feature requests in existing GitHub Issues.
           required: true
-        - label: Black cat
+        - label: I have taken a look at the documentation, and the requested feature does not already exist.
+          required: true
   - type: textarea
     validations:
       required: true
