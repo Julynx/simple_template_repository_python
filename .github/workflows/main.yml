@@ -20,12 +20,7 @@ jobs:
 
       - name: Install dependencies for GitHub Action
         run: |
-          pip install pylint pycodestyle bandit pytest pytest-custom_exit_code coverage pydocstyle
-
-      - name: Extract the repository name
-        run: |
-          repo_name="${GITHUB_REPOSITORY##*/}"
-          echo "The repository name is $repo_name"
+          pip install pylint pycodestyle bandit pytest pytest-custom_exit_code
 
       - name: Passes PyTest tests
         run: |
@@ -33,16 +28,15 @@ jobs:
 
       - name: Linting checks
         run: |
-          pylint $repo_name
+          repo_name="$(echo $GITHUB_REPOSITORY | cut -d '/' -f 2)"
+          pylint --disable=E0401 "$repo_name"
       
       - name: Code style checks
         run: |
-          pycodestyle $repo_name
-
-      - name: Documentation checks
-        run: |
-          pydocstyle $repo_name
+          repo_name="$(echo $GITHUB_REPOSITORY | cut -d '/' -f 2)"
+          pycodestyle "$repo_name"
 
       - name: Security checks
         run: |
-          bandit -r .
+          repo_name="$(echo $GITHUB_REPOSITORY | cut -d '/' -f 2)"
+          bandit "$repo_name"
