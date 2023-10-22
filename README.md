@@ -26,3 +26,9 @@ print("Hello world!")
 ## Section 2 title
 
 Some text
+
+<br>
+
+## Contributing
+
+See [CONTRIBUTING.md](.github/CONTRIBUTING.md).
